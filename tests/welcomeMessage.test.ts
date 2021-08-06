@@ -1,4 +1,4 @@
-import welcomeMessageInit from "../src/functions/welcomeMessage";
+import setupWelcomeMessage from "../src/functions/welcomeMessage";
 import type { UserService } from "../src/services/userService";
 import type { WidgetService } from "../src/services/widgetService";
 import { NotAuthenticatedError } from "../src/errors/NotAuthenticatedError";
@@ -13,11 +13,11 @@ test("throws when there is no user - with cold start injection", async () => {
     },
   };
 
-  const welcomeMessageWithPretendServices = await welcomeMessageInit(
+  const welcomeMessageWithPretendServices = await setupWelcomeMessage(
     pretendWidgetService.getWidgets,
     pretendUserService.getThisUser
   );
 
   const failingPromise = welcomeMessageWithPretendServices();
-  await expect(failingPromise).rejects.toHaveProperty("constructor.name", "NotAuthenticatedError")
+  await expect(failingPromise).rejects.toBeClass(NotAuthenticatedError);
 });
