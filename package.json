@@ -1,0 +1,22 @@
+{
+  "name": "hexagonal-lambda-strategy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/benbenbenbenbenben/hexagonal-lambda-strategy.git",
+  "author": "Benjamin Babik <ben@curlyben.com>",
+  "license": "WTFPL",
+  "scripts": {
+    "prettier": "prettier '(src|tests)/**/*.ts'",
+    "prettier:fix": "prettier --write '(src|tests)/**/*.ts'",
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "prettier": "2.3.2"
+  }
+}
