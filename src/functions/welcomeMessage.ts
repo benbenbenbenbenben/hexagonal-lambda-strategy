@@ -1,13 +1,15 @@
 import { UserService } from "../services/userService";
 import { WidgetService } from "../services/widgetService";
 
-// your actual lambda implementation
+/**
+ * A function that produces a function that produces a message for the current user
+ */
 export default async (
-    $getWidgets = WidgetService.getWidgets, // <- these are cold start dependencies
-    $getThisUser = UserService.getThisUser // <-
+    $getWidgets = WidgetService.getWidgets,
+    $getThisUser = UserService.getThisUser,
   ) =>
   async (
-    $thisUser = $getThisUser() // <- this is a per call dependency
+    $thisUser = $getThisUser(),
   ) => {
     const { id, name } = await $thisUser;
     const { length: widgetCount } = await $getWidgets(id);

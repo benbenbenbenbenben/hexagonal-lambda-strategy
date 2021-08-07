@@ -1,7 +1,7 @@
-import setupWelcomeMessage from "../src/functions/welcomeMessage";
-import type { UserService } from "../src/services/userService";
-import type { WidgetService } from "../src/services/widgetService";
-import { NotAuthenticatedError } from "../src/errors/NotAuthenticatedError";
+import setupWelcomeMessage from "../../src/functions/welcomeMessage";
+import type { UserService } from "../../src/services/userService";
+import type { WidgetService } from "../../src/services/widgetService";
+import { NotAuthenticatedError } from "../../src/errors/NotAuthenticatedError";
 
 test("throws when there is no user - with cold start injection", async () => {
   const pretendWidgetService: typeof WidgetService = {

@@ -1,4 +1,4 @@
-import setupHelloWorld from "../src/functions/helloWorld";
+import setupHelloWorld from "../../src/functions/helloWorld";
 
 test("returns Hello World", () => {
   const helloWorld = setupHelloWorld();

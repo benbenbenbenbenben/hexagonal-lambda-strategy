@@ -3,6 +3,6 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   setupFilesAfterEnv: [
-    "./tests/expect.extend.ts"
+    "./tests/__jest/expect.extend.ts"
   ]
 };
